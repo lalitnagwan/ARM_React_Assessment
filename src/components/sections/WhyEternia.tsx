@@ -148,11 +148,11 @@ export default function WhyEternia() {
                           <img 
                             src={feature.icon} 
                             alt={feature.subtitle}
-                            className="w-16 h-16 object-contain"
+                            className="w-40 h-40 object-contain mt-[-50px]"
                           />
                         </div>
                         
-                        <p className="text-xl font-medium mb-8 text-white leading-relaxed tracking-wide">
+                        <p className="text-lg lg:text-xl font-medium mb-8 lg:mb-5 mt-[-45px] text-white leading-relaxed tracking-wide">
                           {feature.subtitle}
                         </p>
                         
