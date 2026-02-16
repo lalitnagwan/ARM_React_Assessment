@@ -48,55 +48,58 @@ export default function DesignFeatures() {
   };
   
   return (
-    <section className="section-padding" style={{ backgroundColor: '#E6F4FA' }}>
+    <section className="py-24 lg:py-32" style={{ backgroundColor: '#E6F4FA' }}>
       <div className="container-custom">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-4xl font-normal text-gray-900 mb-3">
+        <div className="text-center mb-20 lg:mb-24">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal text-[#003946] mb-6 lg:mb-8 tracking-tight">
             Design. Performance. Longevity.
           </h2>
-          <div className="w-[150px] lg:w-[400px] h-[1.5px] bg-[#003946] mx-auto mb-10 lg:mb-16"></div>
+          <div className="w-56 md:w-96 h-[2px] bg-[#003946] mx-auto"></div>
         </div>
         
-        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {features.map((feature) => (
             <div
               key={feature.id}
               style={feature.id === 1 ? { backgroundColor: feature.color } : {}}
-              className={`${feature.id === 1 ? '' : feature.color} ${feature.id === 1 ? 'text-white' : 'text-gray-800'} rounded-xl p-8 transition-all duration-300 hover:shadow-xl border ${feature.id === 1 ? 'border-sky-400' : 'border-gray-300'} flex flex-col`}
+              className={`${feature.id === 1 ? '' : feature.color} ${feature.id === 1 ? 'text-white' : 'text-[#003946]'} rounded-2xl p-8 transition-all duration-500 hover:shadow-2xl hover:-translate-y-3 hover:scale-105 border-2 ${feature.id === 1 ? 'border-[#2BAAE1]' : 'border-[#E0E0E0]'} flex flex-col group cursor-pointer`}
             >
-              <div className="flex justify-center mb-5">
-                <img src={feature.icon} alt={feature.title} className="w-16 h-16 object-contain" />
+              <div className="flex justify-center mb-6 transition-transform duration-500 group-hover:scale-125 group-hover:rotate-3">
+                <img src={feature.icon} alt={feature.title} className="w-20 h-20 object-contain" />
               </div>
-              <h3 className="text-lg font-bold mb-3 text-center">{feature.title}</h3>
-              <p className="text-sm mb-5 leading-relaxed text-center flex-grow">{feature.description}</p>
+              <h3 className="text-xl font-bold mb-4 text-center transition-colors duration-300">{feature.title}</h3>
+              <p className="text-sm mb-6 leading-relaxed text-center flex-grow opacity-90 group-hover:opacity-100 transition-opacity duration-300">{feature.description}</p>
               <div className="text-center">
                 <a 
                   href={feature.link} 
-                  className={`text-sm font-medium ${feature.id === 1 ? 'text-white underline' : 'text-teal-700 underline'} hover:no-underline`}
+                  className={`text-sm font-bold ${feature.id === 1 ? 'text-white' : 'text-[#008B8B]'} underline hover:no-underline transition-all duration-300 inline-flex items-center gap-1 group-hover:gap-3`}
                 >
                   Learn More
+                  <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
                 </a>
               </div>
             </div>
           ))}
         </div>
         
-        <div className="hidden md:flex justify-center items-center gap-4 mt-8">
+        <div className="hidden md:flex justify-center items-center gap-6 mt-20">
           <button
             onClick={prevSlide}
             disabled={currentSlide === 0}
-            className={`p-2 bg-white rounded-full shadow-md transition-colors border border-gray-200 ${currentSlide === 0 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-50'}`}
+            className={`p-3 bg-white rounded-full shadow-lg transition-all duration-300 border-2 border-gray-200 ${currentSlide === 0 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-50 hover:shadow-2xl hover:scale-125 hover:-translate-x-1'}`}
             aria-label="Previous slide"
           >
-            <FaArrowLeft className="text-gray-600 text-sm" />
+            <FaArrowLeft className="text-gray-600 text-base" />
           </button>
-          <div className="flex gap-2">
+          <div className="flex gap-3">
             {features.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentSlide(index)}
-                className={`h-2 rounded-full transition-all ${
-                  currentSlide === index ? 'bg-gray-800 w-2' : 'bg-gray-300 w-2'
+                className={`h-3 rounded-full transition-all duration-300 ${
+                  currentSlide === index ? 'bg-[#003946] w-12' : 'bg-gray-300 w-3 hover:bg-gray-400 hover:w-6'
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
@@ -105,10 +108,10 @@ export default function DesignFeatures() {
           <button
             onClick={nextSlide}
             disabled={currentSlide === features.length - 1}
-            className={`p-2 bg-white rounded-full shadow-md transition-colors border border-gray-200 ${currentSlide === features.length - 1 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-50'}`}
+            className={`p-3 bg-white rounded-full shadow-lg transition-all duration-300 border-2 border-gray-200 ${currentSlide === features.length - 1 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-50 hover:shadow-2xl hover:scale-125 hover:translate-x-1'}`}
             aria-label="Next slide"
           >
-            <FaArrowRight className="text-gray-600 text-sm" />
+            <FaArrowRight className="text-gray-600 text-base" />
           </button>
         </div>
         

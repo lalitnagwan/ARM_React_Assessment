@@ -22,6 +22,21 @@ export default {
       maxWidth: {
         container: '1280px',
       },
+      spacing: {
+        '128': '32rem',
+        '144': '36rem',
+      },
+      boxShadow: {
+        'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
+        '3xl': '0 25px 50px -12px rgba(0, 0, 0, 0.35)',
+      },
+      backdropBlur: {
+        xs: '2px',
+      },
+      transitionDuration: {
+        '400': '400ms',
+        '600': '600ms',
+      },
     },
   },
   plugins: [],

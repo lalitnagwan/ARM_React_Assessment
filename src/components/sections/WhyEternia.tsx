@@ -48,7 +48,7 @@ export default function WhyEternia() {
   
   return (
     <section 
-      className="py-16 md:py-20 lg:py-24 text-white relative"
+      className="py-28 lg:py-36 text-white relative"
       style={{
         backgroundImage: 'linear-gradient(rgba(2, 48, 61, 0.95), rgba(2, 48, 61, 0.95)), url(/images/bg-img.png)',
         backgroundSize: 'cover',
@@ -58,61 +58,61 @@ export default function WhyEternia() {
       }}
     >
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-12 md:mb-16 lg:mb-20">
-          <h2 className="text-3xl md:text-4xl lg:text-[48px] font-light tracking-wide mb-4">
+        <div className="text-center mb-20 lg:mb-28">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-normal tracking-wide mb-6 lg:mb-8">
             Why Choose Eternia
           </h2>
-          <div className="w-48 md:w-[450px] h-[1.5px] bg-white mx-auto"></div>
+          <div className="w-64 md:w-[500px] h-[2px] bg-white mx-auto"></div>
         </div>
         
-        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature) => (
             <div
               key={feature.id}
-              className="relative rounded-2xl p-[1.5px] transition-all duration-300"
+              className="relative rounded-2xl p-[2px] transition-all duration-500 hover:scale-110 hover:rotate-1 group"
               style={{
                 background: 'linear-gradient(160deg, rgba(0,200,180,0.6) 0%, rgba(0,80,80,0.3) 30%, rgba(0,40,50,0.2) 60%, rgba(0,180,160,0.4) 100%)',
               }}
             >
-              <div className="bg-[#0a2a30] rounded-2xl p-6 lg:p-3 h-full relative overflow-hidden">
-                <div className="absolute inset-0 rounded-2xl" style={{
+              <div className="glass-dark rounded-2xl p-10 lg:p-8 h-full relative overflow-hidden">
+                <div className="absolute inset-0 rounded-2xl transition-opacity duration-500 group-hover:opacity-80" style={{
                   background: 'radial-gradient(ellipse at top left, rgba(0,180,160,0.08) 0%, transparent 50%), radial-gradient(ellipse at bottom right, rgba(0,180,160,0.05) 0%, transparent 50%)',
                 }} />
                 
                 <div className="relative z-10">
-                  <div>
+                  <div className="transition-all duration-500 group-hover:scale-110 group-hover:-rotate-6">
                     <img 
                       src={feature.icon} 
                       alt={feature.subtitle}
-                      className="w-16 h-16 lg:w-40 lg:h-40 object-contain mt-[-50px]"
+                      className="w-16 h-16 lg:w-40 lg:h-40 object-contain -mt-12"
                     />
                   </div>
                   
-                  <p className="text-lg lg:text-xl font-medium mb-8 lg:mb-5 mt-[-40px] text-white leading-relaxed tracking-wide">
+                  <p className="text-lg lg:text-xl font-semibold mb-10 lg:mb-6 -mt-10 text-white leading-relaxed tracking-wide">
                     {feature.subtitle}
                   </p>
 
-                  <div className="w-full h-[0.5px] mb-8 lg:mb-10" style={{
+                  <div className="w-full h-[1px] mb-10 lg:mb-12 transition-all duration-500 group-hover:h-[2px]" style={{
                     background: 'linear-gradient(90deg, #0E3745 0%, #B1B1B1 50%, #0E3745 100%)'
                   }} />
                   
-                  <ul className="space-y-5">
+                  <ul className="space-y-6">
                     {feature.benefits.map((benefit, index) => (
-                      <li key={index} className="flex items-start gap-3">
+                      <li key={index} className="flex items-start gap-3 transition-all duration-300 hover:translate-x-2 hover:scale-105">
                         <div 
-                          className="flex-shrink-0 w-5 h-5 rounded-[5px] flex items-center justify-center mt-0.5"
+                          className="flex-shrink-0 w-6 h-6 rounded-md flex items-center justify-center mt-0.5 transition-all duration-300 group-hover:scale-110 group-hover:rotate-12"
                           style={{
                             backgroundColor: 'rgba(255, 255, 255, 0.2)',
-                            border: '0.5px solid rgba(255, 255, 255, 0.25)',
+                            border: '1px solid rgba(255, 255, 255, 0.25)',
                           }}
                         >
                           <img 
                             src="/images/checkbox.png" 
                             alt="checkmark"
-                            className="w-2.5 h-2.5 object-contain"
+                            className="w-3 h-3 object-contain"
                           />
                         </div>
-                        <span className="text-sm lg:text-[15px] leading-relaxed text-white/90">
+                        <span className="text-sm lg:text-base leading-relaxed text-white/95">
                           {benefit}
                         </span>
                       </li>

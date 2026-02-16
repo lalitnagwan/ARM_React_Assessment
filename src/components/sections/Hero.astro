@@ -2,25 +2,50 @@
 ---
 
 <section class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
-  <div class="absolute inset-0 bg-cover bg-center" style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/images/home.png');">
+  <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 hover:scale-105" style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/images/home.png');">
   </div>
   
   <div class="relative z-10 container-custom text-center text-white px-4">
-    <h1 class="text-4xl md:text-5xl lg:text-6xl font-normal mb-4 leading-tight tracking-normal">
+    <h1 class="text-4xl md:text-5xl lg:text-6xl font-normal mb-6 lg:mb-8 leading-tight tracking-tight animate-fade-in">
       Imagine <span class="font-bold">Windows.</span> Not <span class="font-bold">Walls.</span>
     </h1>
-    <p class="text-sm md:text-base lg:text-lg mb-8 max-w-2xl mx-auto leading-relaxed font-light">
+    <p class="text-base md:text-lg lg:text-lg mb-10 lg:mb-12 max-w-3xl mx-auto leading-relaxed font-light opacity-0 animate-fade-in-delay">
       Luxury aluminium windows and doors designed to bring in light, views and lasting strength.
     </p>
-    <button class="bg-white/10 backdrop-blur-sm border border-white/30 text-white hover:bg-white/20 transition-all duration-300 rounded text-sm md:text-base px-6 py-2.5 font-normal">
+    <button class="glass border-2 border-white text-white hover:bg-white hover:text-[#003946] transition-all duration-300 rounded-lg text-base px-10 py-4 font-medium tracking-wide hover:scale-105 hover:shadow-2xl opacity-0 animate-fade-in-delay-2 mt-32">
       Book a Window Consultation
     </button>
   </div>
   
   <div class="absolute bottom-6 left-0 right-0 flex lg:hidden justify-center gap-2 z-20">
-    <button class="w-2 h-2 rounded-full bg-white" aria-label="Slide 1"></button>
-    <button class="w-2 h-2 rounded-full bg-white/40" aria-label="Slide 2"></button>
-    <button class="w-2 h-2 rounded-full bg-white/40" aria-label="Slide 3"></button>
-    <button class="w-2 h-2 rounded-full bg-white/40" aria-label="Slide 4"></button>
+    <button class="w-2 h-2 rounded-full bg-white transition-all duration-300 hover:scale-125" aria-label="Slide 1"></button>
+    <button class="w-2 h-2 rounded-full bg-white/40 transition-all duration-300 hover:bg-white/60 hover:scale-125" aria-label="Slide 2"></button>
+    <button class="w-2 h-2 rounded-full bg-white/40 transition-all duration-300 hover:bg-white/60 hover:scale-125" aria-label="Slide 3"></button>
+    <button class="w-2 h-2 rounded-full bg-white/40 transition-all duration-300 hover:bg-white/60 hover:scale-125" aria-label="Slide 4"></button>
   </div>
 </section>
+
+<style>
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in-delay {
+    animation: fadeIn 0.8s ease-out 0.3s forwards;
+  }
+
+  .animate-fade-in-delay-2 {
+    animation: fadeIn 0.8s ease-out 0.6s forwards;
+  }
+</style>

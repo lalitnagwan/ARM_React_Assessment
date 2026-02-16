@@ -57,13 +57,13 @@ export default function ExpertPerformance() {
   };
   
   return (
-    <section className="section-padding bg-[#E6F4FA]">
+    <section className="py-28 lg:py-36 bg-[#E6F4FA]">
       <div className="container-custom">
-        <div className="flex flex-col items-center mb-12 lg:mb-24">
-          <h2 className="text-2xl md:text-4xl lg:text-[40px] font-normal text-[#003946] mb-3 md:mb-4 leading-tight tracking-wide" style={{ fontFamily: 'SF Pro, Inter, sans-serif' }}>
+        <div className="flex flex-col items-center mb-20 lg:mb-28">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-[#003946] mb-6 lg:mb-8 leading-tight tracking-wide transition-all duration-500 hover:scale-105 hover:-translate-y-1" style={{ fontFamily: 'SF Pro, Inter, sans-serif' }}>
             Expert-Approved <br className="md:hidden" /> Performance
           </h2>
-          <div className="w-48 md:w-[420px] h-[1.5px] bg-[#003946] mx-auto"></div>
+          <div className="w-56 md:w-80 h-[2px] bg-[#003946] mx-auto transition-all duration-500 hover:w-96"></div>
         </div>
         
         <div className="hidden lg:block relative">
@@ -82,19 +82,19 @@ export default function ExpertPerformance() {
               return (
                 <div
                   key={expert.id}
-                  className="absolute w-72 h-108 transition-all duration-500 cursor-pointer group"
+                  className="absolute w-80 h-[28rem] transition-all duration-700 cursor-pointer group"
                   style={{
                     transform: `translateX(${translateX}px) translateZ(${translateZ}px) rotateY(${rotateY}deg) scale(${scale})`,
                     zIndex: zIndex,
                     transformStyle: 'preserve-3d',
                   }}
                 >
-                  <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl hover:shadow-3xl transition-shadow duration-300">
+                  <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-700 group-hover:scale-110 group-hover:rotate-1">
 
                     <img 
                       src={expert.thumbnail} 
                       alt={expert.name}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-125"
                     />
                     
                   </div>
@@ -103,23 +103,23 @@ export default function ExpertPerformance() {
             })}
           </div>
           
-          <div className="flex items-center justify-center gap-6 mt-12">
+          <div className="flex items-center justify-center gap-8 mt-16">
             <button
               onClick={prevGroup}
-              className="w-12 h-12 bg-[#0A3D3D] rounded-full flex items-center justify-center hover:bg-[#174545] transition-colors shadow-lg"
+              className="w-14 h-14 bg-[#0A3D3D] rounded-full flex items-center justify-center hover:bg-[#174545] transition-all duration-300 shadow-lg hover:shadow-2xl hover:scale-125 hover:-translate-x-2"
               aria-label="Previous group"
             >
-              <img src="/images/arrow-left.png" alt="Previous" className="w-5 h-5" />
+              <img src="/images/arrow-left.png" alt="Previous" className="w-6 h-6 transition-transform duration-300 group-hover:scale-110" />
             </button>
             
-            <div className="flex gap-3">
+            <div className="flex gap-4">
               {expertGroups.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentGroup(index)}
-                   className={`h-2 rounded-full transition-all ${
-                  currentGroup === index ? 'bg-[#0A3D3D] w-2' : 'bg-transparent border border-white w-2'
-                }`}
+                  className={`h-3 rounded-full transition-all duration-300 border-2 ${
+                    currentGroup === index ? 'bg-[#0A3D3D] w-12 border-[#0A3D3D]' : 'bg-transparent border-[#0A3D3D] w-3 hover:w-8 hover:bg-[#0A3D3D]/50 hover:scale-125'
+                  }`}
                   aria-label={`Go to group ${index + 1}`}
                 />
               ))}
@@ -127,10 +127,10 @@ export default function ExpertPerformance() {
             
             <button
               onClick={nextGroup}
-              className="w-12 h-12 bg-[#0A3D3D] rounded-full flex items-center justify-center hover:bg-[#174545] transition-colors shadow-lg"
+              className="w-14 h-14 bg-[#0A3D3D] rounded-full flex items-center justify-center hover:bg-[#174545] transition-all duration-300 shadow-lg hover:shadow-2xl hover:scale-125 hover:translate-x-2"
               aria-label="Next group"
             >
-              <img src="/images/arrow-right.png" alt="Next" className="w-5 h-5" />
+              <img src="/images/arrow-right.png" alt="Next" className="w-6 h-6 transition-transform duration-300 group-hover:scale-110" />
             </button>
           </div>
         </div>
@@ -154,7 +154,7 @@ export default function ExpertPerformance() {
                 return (
                   <div
                     key={expert.id}
-                    className="absolute transition-all duration-500 ease-out"
+                    className="absolute transition-all duration-700 ease-out"
                     style={{
                       width: '85%',
                       aspectRatio: '3/4',
@@ -184,24 +184,24 @@ export default function ExpertPerformance() {
           </div>
           
           
-          <div className="flex items-center justify-center gap-4 mt-10">
+          <div className="flex items-center justify-center gap-6 mt-12">
             <button
               onClick={prevMobile}
-              className="w-12 h-12 bg-[#0A3D3D] rounded-full flex items-center justify-center hover:bg-[#174545] transition-colors shadow-lg"
+              className="w-14 h-14 bg-[#0A3D3D] rounded-full flex items-center justify-center hover:bg-[#174545] transition-all duration-300 shadow-lg hover:shadow-2xl hover:scale-125 hover:-translate-x-2"
               aria-label="Previous"
             >
-              <img src="/images/arrow-left.png" alt="Previous" className="w-5 h-5" />
+              <img src="/images/arrow-left.png" alt="Previous" className="w-6 h-6" />
             </button>
             
-            <div className="flex gap-2.5">
+            <div className="flex gap-3">
               {expertGroups[0].map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentMobileIndex(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  className={`h-3 rounded-full transition-all duration-300 border-2 ${
                     currentMobileIndex === index 
-                      ? 'bg-[#0A3D3D] scale-110' 
-                      : 'bg-transparent border-2 border-[#0A3D3D]'
+                      ? 'bg-[#0A3D3D] w-12 border-[#0A3D3D] scale-110' 
+                      : 'bg-transparent border-[#0A3D3D] w-3 hover:w-8 hover:bg-[#0A3D3D]/50 hover:scale-125'
                   }`}
                   aria-label={`Go to slide ${index + 1}`}
                 />
@@ -210,10 +210,10 @@ export default function ExpertPerformance() {
             
             <button
               onClick={nextMobile}
-              className="w-12 h-12 bg-[#0A3D3D] rounded-full flex items-center justify-center hover:bg-[#174545] transition-colors shadow-lg"
+              className="w-14 h-14 bg-[#0A3D3D] rounded-full flex items-center justify-center hover:bg-[#174545] transition-all duration-300 shadow-lg hover:shadow-2xl hover:scale-125 hover:translate-x-2"
               aria-label="Next"
             >
-              <img src="/images/arrow-right.png" alt="Next" className="w-5 h-5" />
+              <img src="/images/arrow-right.png" alt="Next" className="w-6 h-6" />
             </button>
           </div>
         </div>

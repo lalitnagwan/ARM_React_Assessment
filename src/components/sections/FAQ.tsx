@@ -59,44 +59,45 @@ export default function FAQ() {
   return (
     <section
       style={{ backgroundColor: '#003946' }}
-      className="py-20 lg:py-28 text-white"
+      className="py-28 lg:py-36 text-white"
     >
       <div className="max-w-[1080px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center">
           <h2
-            className="text-3xl md:text-4xl lg:text-[40px] font-normal text-white mb-3 md:mb-4 leading-tight tracking-wide"
+            className="text-4xl md:text-5xl lg:text-6xl font-light text-white mb-6 lg:mb-8 leading-tight tracking-wide transition-all duration-500 hover:scale-105 hover:-translate-y-1"
             style={{ fontFamily: 'SF Pro, Inter, sans-serif' }}
           >
             Frequently Asked<br className="md:hidden" /> Questions
           </h2>
-          <div className="w-64 md:w-[450px] h-[1.5px] bg-white mx-auto mb-14"></div>
+          <div className="w-56 md:w-80 h-[2px] bg-white mx-auto mb-20 lg:mb-24 transition-all duration-500 hover:w-96"></div>
         </div>
 
         <div>
           {faqs.map((faq, index) => {
             const isOpen = openId === faq.id;
             return (
-              <div key={faq.id}>
+              <div key={faq.id} className="transition-all duration-500 hover:bg-white/10 rounded-xl px-4 hover:scale-[1.02] hover:shadow-2xl">
 
                 {index === 0 && (
                   <div
                     style={{
-                      height: '1px',
-                      backgroundColor: 'rgba(255,255,255,0.2)',
+                      height: '2px',
+                      backgroundColor: 'rgba(255,255,255,0.25)',
                     }}
                   />
                 )}
                 <div>
                   <button
                     onClick={() => toggleFaq(faq.id)}
-                    className="w-full flex items-center justify-between text-left"
-                    style={{ padding: '20px 0' }}
+                    className="w-full flex items-center justify-between text-left group"
+                    style={{ padding: '28px 16px' }}
                     aria-expanded={isOpen}
                   >
                     <span
+                      className="transition-all duration-300 group-hover:text-white group-hover:translate-x-2"
                       style={{
                         fontFamily: "'Inter', sans-serif",
-                        fontSize: '16px',
+                        fontSize: '19px',
                         fontWeight: 600,
                         lineHeight: 1.5,
                         color: '#FFFFFF',
@@ -106,19 +107,22 @@ export default function FAQ() {
                       {faq.question}
                     </span>
                     <span
+                      className="transition-all duration-300 group-hover:scale-125 group-hover:rotate-90"
                       style={{
                         flexShrink: 0,
-                        fontSize: '22px',
+                        fontSize: '32px',
                         fontWeight: 300,
                         color: '#FFFFFF',
-                        width: '24px',
-                        height: '24px',
+                        width: '32px',
+                        height: '32px',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
+                        transform: isOpen ? 'rotate(45deg)' : 'rotate(0deg)',
+                        transition: 'transform 0.5s ease',
                       }}
                     >
-                      {isOpen ? '\u00D7' : '+'}
+                      +
                     </span>
                   </button>
 
@@ -127,17 +131,19 @@ export default function FAQ() {
                       maxHeight: isOpen ? '600px' : '0',
                       opacity: isOpen ? 1 : 0,
                       overflow: 'hidden',
-                      transition: 'max-height 0.35s ease, opacity 0.3s ease',
+                      transition: 'max-height 0.5s ease, opacity 0.5s ease',
                     }}
                   >
                     <div
+                      className="transition-all duration-500"
                       style={{
                         fontFamily: "'Inter', sans-serif",
-                        fontSize: '15px',
+                        fontSize: '16px',
                         fontWeight: 400,
                         lineHeight: 1.75,
-                        color: 'rgba(255,255,255,0.85)',
-                        paddingBottom: '20px',
+                        color: 'rgba(255,255,255,0.9)',
+                        paddingBottom: '24px',
+                        paddingLeft: '4px',
                       }}
                     >
                       {faq.answer}
@@ -146,8 +152,8 @@ export default function FAQ() {
                 </div>
                 <div
                   style={{
-                    height: '1px',
-                    backgroundColor: 'rgba(255,255,255,0.2)',
+                    height: '2px',
+                    backgroundColor: 'rgba(255,255,255,0.25)',
                   }}
                 />
               </div>
